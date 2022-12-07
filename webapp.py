@@ -12,7 +12,7 @@ import pandas as pd
 import datetime as dt
 import joblib
 
-loaded_model = pickle.load(open('E:/Egyetem/5. félév/GÉpi tan/feleves/regression.sav', 'rb'))
+loaded_model = pickle.load(open('regression.sav', 'rb'))
 
 def prediction_function(input_data):
 
@@ -53,8 +53,8 @@ def main():
     df.loc['0'] = [date,Open_float,High_float, Low_float, Volumeint]
     
     #scaler beöltése (scaler_y), amivel inverz transzformáljuk a prediktált close értéket, mivel a modell skálázott adatra volt tanítva
-    scaler_X =  pickle.load(open('E:/Egyetem/5. félév/GÉpi tan/feleves/scaler_X.sav', 'rb'))
-    scaler_y = pickle.load(open('E:/Egyetem/5. félév/GÉpi tan/feleves/scaler_y.sav', 'rb'))
+    scaler_X =  pickle.load(open('scaler_X.sav', 'rb'))
+    scaler_y = pickle.load(open('scaler_y.sav', 'rb'))
     
     inverse_close=''
     
